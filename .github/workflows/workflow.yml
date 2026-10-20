@@ -33,5 +33,10 @@ jobs:
 
       - name: Run unit tests with nose
         run: |
-          python -c "import collections, collections.abc; collections.Callable = collections.abc.Callable"
-          nosetests
+              python -c "
+              import collections
+              import collections.abc
+              collections.Callable = collections.abc.Callable
+              import nose
+              nose.main()
+              "
